@@ -7,8 +7,7 @@
 
 @rem Set local scope for the variables with windows NT shell
 
-set JAVA_HOME=C:\Program Files\Java\jdk1.6.0_45
-
+set JAVA_HOME=C:\Program Files (x86)\Java\jdk1.6.0_45
 if "%OS%"=="Windows_NT" setlocal
 
 set CLASS=org.grails.wrapper.GrailsWrapper
