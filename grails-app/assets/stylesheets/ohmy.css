@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/* CSS Document */
+
+	/*body, div, dl, dt, dd, ul, ol, li, span, h1, h2, h3, h4, h5, form, fieldset, p, button, input, label, textarea{
+	font-family: Nanum Gothic, "나눔고딕", dotum, "돋움", Helvetica, sans-serif, Apple-Gothic;}
+	body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+	body,input,textarea,select,button,table{font-size:12px;}
+	img,fieldset{border:0}
+	ul,ol,li{list-style:none;}
+	table{border-collapse:collapse}
+	em,address{font-style:normal}
+	a:link{text-decoration:none; color:#fff;}*/
+	
+/*common*/
+*{margin:0; padding:0; box-sizing:border-box; }
+body, div, dl, dt, dd, ul, ol, li, span, h1, h2, h3, h4, h5, form, fieldset, p, button, input, label, textarea{
+	font-family: Nanum Gothic, "나눔고딕", dotum, "돋움", Helvetica, sans-serif, Apple-Gothic;}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+body,input,textarea,select,button,table{font-size:12px;}
+img,fieldset{border:0}
+ul,ol,li{list-style:none}
+table{border-collapse:collapse}
+em,address{font-style:normal}
+
+/*Link Css */
+a:link{text-decoration:none; color:#333;}
+
+body,input,textarea,select,button,table{font-size: 14px; font-family:'맑은 고딕','Malgun Gothic','돋움',Dotum,'굴림',Gulim,Arial,Helvetica,sans-serif,Apple-Gothic; -webkit-text-size-adjust:none;}
+html,body {position: relative; width:100%; height:100%; padding:0; margin:0; background:#333;color:#000; min-width:320px;}
+
+body, th, td, input, select, textarea, button {font-size: 14px; line-height:140%; font-family:'맑은 고딕','Malgun Gothic','돋움',Dotum,'굴림',Gulim,Arial,Helvetica,sans-serif,Apple-Gothic; color: #333;}
+
+
+	.btn_section { width:30%; margin-right:2%; margin-bottom:2%; border:solid 1px #718397; border-radius: 5px; background:rgba(16,21,45,0.7); text-align:center; color:#fff; font-size:18px; line-height:35px;}
+	.on{border:solid 1px #f37577; background:#f37577;}
+	/* 공유하기 레이어*/
+	.share_layer { height:100%; background-color:rgba(0, 0, 0, 0.60); z-index:2; position:absolute; width:100%;}
+	.share_layer ul { width:230px; margin: 5% auto; background-color: #f8f8f8; }
+	.share_layer ul li { border-bottom: #dfdfdf solid 1px; line-height: 42px; position:relative;}
+	.share_layer ul li a{ display:block;}
+	.share_layer ul .tit { background-color:#333; font-size:15px; font-weight:bold; padding-left:15px }
+	.share_layer ul .tit a{ color:#fff; line-height: 36px;}
+	.share_layer ul .copy {padding: 5px 10px; height: 54px;}
+	.share_layer ul .copy input {width: 155px; height: 27px; vertical-align: top; border: 1px solid #ccc; color: #555; -webkit-box-shadow: inset 0 1px 0 #f2f2f2; -webkit-box-sizing: border-box; -webkit-appearance: none; text-indent: 0.5em; border-radius: 5px; font-size: 13px;}
+	.share_layer ul .copy button {border: 0; background: none; margin-left: 5px; background-color: #BBB; color: #fff; vertical-align: top; padding: 0 14px; line-height: 26px;font-size: 11px;}
+	.share_layer ul .copy .text{font-size: 9px; letter-spacing: -1px; color: #777; line-height: 11px; margin-bottom: 5px;}
+	.share_layer ul .copy .urlbox { height:30px; display:block }
+	
+	.share_layer ul .close{ height:15px; background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_arrow_s.png) no-repeat;text-indent: -9999px; background-size: 40px; float: right; background-position: 100% -615px; margin-right: 12px; padding-right: 15px; margin-top: 12px; }@media screen and (-webkit-min-device-pixel-ratio:1.5){.share_layer ul .close{ height:15px; background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_arrow.png) no-repeat;text-indent: -9999px; background-size: 40px; float: right; background-position: 100% -615px; margin-right: 12px; padding-right: 15px; margin-top: 12px; }}
+	
+	.share_layer ul .fb { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh_s.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 2px;}@media screen and (-webkit-min-device-pixel-ratio:1.5){.share_layer ul .fb { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 2px;}}
+	.share_layer ul .twt { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh_s.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -38px;}@media screen and (-webkit-min-device-pixel-ratio:1.5){.share_layer ul .twt { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -38px;}}
+	.share_layer ul .m2 { display:none; background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh_s.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -78px;}@media screen and (-webkit-min-device-pixel-ratio:1.5){.share_layer ul .m2 { display:none; background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -78px;}}
+	.share_layer ul .gp { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh_s.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -78px;}@media screen and (-webkit-min-device-pixel-ratio:1.5){.share_layer ul .gp { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -78px;}}
+	.share_layer ul .ks { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh_s.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -118px;}@media screen and (-webkit-min-device-pixel-ratio:1.5){.share_layer ul .ks { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -118px;}}
+	.share_layer ul .kt { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh_s.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -160px;}@media screen and (-webkit-min-device-pixel-ratio:1.5){.share_layer ul .kt { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -160px;}}
+	.share_layer ul .em { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh_s.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -200px;}@media screen and (-webkit-min-device-pixel-ratio:1.5){.share_layer ul .em { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -200px;}}
+	.share_layer ul .url { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh_s.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -240px;}@media screen and (-webkit-min-device-pixel-ratio:1.5){.share_layer ul .url { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -240px;}}
+	.share_layer ul .bd { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh_s.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -280px;}@media screen and (-webkit-min-device-pixel-ratio:1.5){.share_layer ul .bd { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -280px;}}
+	.share_layer ul .ln { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh_s.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -320px;}@media screen and (-webkit-min-device-pixel-ratio:1.5){.share_layer ul .ln { background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_layer_sh.png) no-repeat; background-size: 130px; text-indent: -9999px; background-position: 0 -320px;}}
+.share_layer li .arrow{ height:10px; width:10px; background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_arrow_s.png) no-repeat; background-size: 40px; background-position: 100% -94px; position: absolute; right: 0; top: 0; }@media screen and (-webkit-min-device-pixel-ratio:1.5){.share_layer li .arrow{ height:10px; width:10px; background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_arrow.png) no-repeat; background-size: 40px; background-position: 100% -94px; margin-right: 15px; padding-top: 42px;  position: absolute; right: 0; top: 0; }}
+.share_layer li .arrow_d{ height:10px; width:10px; background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_arrow_s.png) no-repeat; background-size: 40px; background-position: 100% -648px;  margin-right: 15px; padding-top: 42px; position: absolute; right: 0; top: 0; } @media screen and (-webkit-min-device-pixel-ratio:1.5){.share_layer li .arrow_d{ height:10px; width:10px; background:url(http://ojsimg.ohmynews.com/images/mobile_2013/news/icon_arrow.png) no-repeat; background-size: 40px; background-position: 100% -648px; margin-right: 15px; padding-top: 42px; position: absolute; right: 0; top: 0; }}
+
+.main_bg{background: url(../images/main01.jpg) #0c84d6 no-repeat; background-size: auto; min-height:960px; background-position:center top;}
+.main01_out{width:80%; margin:0 auto; padding-top:265px;}
+.input01{width: 100%;
+    line-height: 30px;
+    font-size: 20px;
+    text-align:center;
+    padding: 5px 0;
+    border: solid 1px #ccc;}
+	
+.btn01{margin-top: 10px;
+    line-height: 40px;
+    background: #0AD608;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    border: 0;
+    width: 100%;
+    padding: 5px;}
+	
+.box01{padding:15px; border-radius:15px; background:#ecf4f8; margin:15px; }
+.boxtitl{ font-size:15px; color:#000; }

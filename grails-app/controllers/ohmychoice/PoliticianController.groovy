@@ -8,12 +8,17 @@ class PoliticianController {
 
     static scaffold = true
 	
-	def search(String name){
+	def apiNameSearch(String name){
 		
 		render Politician.findAllByName(name) as JSON
 	}
 	
 	def api(long id){
 		render Politician.get(id) as JSON
+	}
+	
+	def nameSearch(String name){
+		Politician polician = Politician.findByName(name)
+		respond polician
 	}
 }

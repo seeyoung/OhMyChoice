@@ -20,7 +20,7 @@ class BootStrap {
 			Party minju = new Party(name:"새정치민주연합")
 			minju.save(flush:true)
 			
-			Politician moo = new Politician(district:dist, party:nuri, name: "김무성", deptCd:"9770895", pokrId:"1951151").save(flush:true)
+			Politician moo = new Politician(district:dist, party:nuri, name: "김무성", photoUrl:"http://www.k-today.com/news/photo/201509/1196_1465_1729.jpg", duty:"대표(최고위원)", birthDay:"1951년 9월 20일", deptCd:"9770895", pokrId:"1951151", reputationChartId:"ZTY0Y", approvalRateChartId:'OTVjY').save(flush:true)
 			
 			Person person = new Person(name:"홍길동").save(flush:true)
 			
@@ -34,7 +34,7 @@ class BootStrap {
 			article.addToPersons(person)
 			article.save(flush:true)
 			
-			Politician mun = new Politician(district:dist2, party:minju, name: "문재인", deptCd:"9770759", pokrId:"19531110").save(flush:true)
+			Politician mun = new Politician(district:dist2, party:minju, name: "문재인", duty:"대표(최고위원)", birthDay:"1953년 1월 24일", deptCd:"9770759", pokrId:"19531110", reputationChartId:"ZTY0Y", approvalRateChartId:'OTVjY').save(flush:true)
 			article = new ArticleLink(title:"문재인-정동영, 순창서 전격 회동... 복당 요청", link:"http://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0002169507")
 			article.addToPoliticians(mun)
 			article.addToPersons(person)
