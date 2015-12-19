@@ -35,5 +35,15 @@ class Politician {
 	String getPokrUrl(){
 		pokrBaseUrl+pokrId
 	}
+	
+	List<ArticleLink> searchArticles(){
+		ArticleLink.getArticles4Politician(this)
+	}
 
+	int likeCount(){
+		PoliticianReputation.getLikeCount(this)
+	}
+	int dislikeCount(){
+		PoliticianReputation.getDislikeCount(this)
+	}
 }

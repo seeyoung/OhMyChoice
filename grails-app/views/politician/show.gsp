@@ -67,10 +67,26 @@
 					
 				</li>
 				</g:if>
-				<li class="fieldcontain"><span class="property-value" aria-labelledby="party-label">
-					<a href="${politicianInstance.infoUrl}">국회사이트 의원정보</a></span></li>
-				<li class="fieldcontain"><span class="property-value" aria-labelledby="party-label">
-					<a href="${politicianInstance.pokrUrl}">pokr.kr 의원정보</a></span></li>
+				<li class="fieldcontain">
+					<span id="party-label" class="property-label">호감도</span>
+					<span class="property-value" aria-labelledby="party-label">
+						좋아요: ${politicianInstance.likeCount() }, 싫어요: ${politicianInstance.dislikeCount() }
+					</span>
+				</li>
+				<li class="fieldcontain">
+					<span id="party-label" class="property-label">link</span>
+					<span class="property-value" aria-labelledby="party-label">
+					<a href="${politicianInstance.infoUrl}">국회사이트 의원정보</a><br/>
+					<a href="${politicianInstance.pokrUrl}">pokr.kr 의원정보</a>
+					</span></li>
+				<li class="fieldcontain">
+					<span id="party-label" class="property-label">관련 기사</span>
+					<span class="property-value" aria-labelledby="party-label">
+							<g:each in="${politicianInstance.searchArticles()}" status="i" var="articleLink">
+								<g:link controller="articleLink" action="show" id="${articleLink.id }">${articleLink.title }</g:link><br/>
+							</g:each> 
+					</span>
+				</li>
 			</ol>
 			<g:form url="[resource:politicianInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
