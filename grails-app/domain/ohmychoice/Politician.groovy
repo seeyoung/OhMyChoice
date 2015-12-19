@@ -17,6 +17,7 @@ class Politician {
 	
     static constraints = {
 		deptCd nullable:true
+		pokrId nullable:true
     }
 	
 	String getInfoUrl(){
