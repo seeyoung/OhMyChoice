@@ -6,6 +6,38 @@
 <g:set var="entityName"
 	value="${message(code: 'politician.label', default: 'Politician')}" />
 <title>oh my choice</title>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	google.load('visualization', '1', {
+		packages : [ 'corechart', 'bar' ]
+	});
+	google.setOnLoadCallback(drawBasic);
+
+	function drawBasic() {
+
+		var data = google.visualization.arrayToDataTable([
+				[ '', 'SNS 호감도', { role: 'style' }],
+				[ '좋아요', ${politicianInstance.likeCount}, 'color:#4d9cf3' ],
+				[ '싫어요', ${politicianInstance.dislikeCount}, 'color:#ff1818' ] ]);
+
+		var options = {
+			title : '${politicianInstance.name } 호감도',
+			chartArea : {
+				width : '70%'
+			},
+			hAxis : {
+				title : '좋아요, 싫어요 집계',
+				minValue : 0
+			},
+		};
+
+		var chart = new google.visualization.BarChart(document
+				.getElementById('chart_div'));
+
+		chart.draw(data, options);
+	}
+</script>
 </head>
 <body>
 	<div style="position: relative;">
@@ -31,7 +63,7 @@
 				<p class="g_up_txt">
 					<span class="lnk">출생: ${politicianInstance.birthDay}</span><span
 						class="lnk">소속: ${politicianInstance.party}(${politicianInstance.district},
-						${politicianInstance.duty})
+						${politicianInstance.role})
 					</span>
 				</p>
 				<img src="${politicianInstance.photoUrl}"
@@ -40,7 +72,7 @@
 
 
 			<div
-				style=" background: url(${politicianInstance.photoUrl}) no-repeat; background-size: auto; background-position:center top; height:270px; display:none">
+				style=" background: url(${politicianInstance.district}) no-repeat; background-size: auto; background-position:center top; height:270px; display:none">
 				<div class="flicking_story">
 					<p class="actions">[음감회 현장] 15년 만에 정규 6집 발표...1990년대를 바탕에 둔 현재의
 						음악</p>
@@ -53,11 +85,16 @@
 		<!-- 실시간 선호도 -->
 		<div class="box02">
 			<h2 class="boxtitl02" style="display: none;">실시간 선호도</h2>
-			<iframe width="100%" height="300"
-				src="${politicianInstance.getReputationChartUrl() }" frameborder="0"></iframe>
+			<div id="chart_div"></div>
 			<div style="margin: 0 auto; text-align: center;">
-				<button class="btn02">좋아요</button>
-				<button class="btn03">싫어요</button>
+				<g:link action="isLike"
+					params="[politicianId:politicianInstance.id, isLike:true]">
+					<button class="btn02">좋아요</button>
+				</g:link>
+				<g:link action="isLike"
+					params="[politicianId:politicianInstance.id, isLike:false]">
+					<button class="btn03">싫어요</button>
+				</g:link>
 			</div>
 		</div>
 		<!-- 월별 지지율 -->
@@ -89,20 +126,25 @@
 				<g:each in="${politicianInstance.searchVideos()}" status="i"
 					var="videoLink">
 					<li class="ut_item"><a
-						href="https://www.youtube.com/watch?v=${videoLink.youtubeId }" class="ut_a">
-							<span class="ut_mw"><img
+						href="https://www.youtube.com/watch?v=${videoLink.youtubeId }"
+						class="ut_a"> <span class="ut_mw"><img
 								src="http://img.youtube.com/vi/${videoLink.youtubeId }/0.jpg"
 								width="100%" alt="" class="ut_m" data-width="270"
 								data-height="166"><em class="ico_play ico_tv">영상</em></span> <span
-							class="ut_d"><strong class="ut_t">${videoLink.title }
+							class="ut_d"><strong class="ut_t"> ${videoLink.title }
 							</strong></span>
 					</a></li>
 				</g:each>
 			</ul>
 		</div>
-							<g:each in="${politicianInstance.searchArticles()}" status="i" var="articleLink">
-								<g:link controller="articleLink" action="show" id="${articleLink.id }">${articleLink.title }</g:link><br/>
-							</g:each> 
+		<g:each in="${politicianInstance.searchArticles()}" status="i"
+			var="articleLink">
+			<g:link controller="articleLink" action="show"
+				id="${articleLink.id }">
+				${articleLink.title }
+			</g:link>
+			<br />
+		</g:each>
 
 		<g:set var="articles" value="${politicianInstance.searchArticles()}" />
 		<!-- 관련기사 -->
@@ -113,11 +155,12 @@
 			</h2>
 			<ul class="uio_text">
 				<g:each in="${articles}" status="i" var="articleLink">
-				<li class="ut_item"
-					style="border-bottom: solid 1px #ccc; border-top: solid 1px #ddd;">
-					<a href="${articleLink.link }" class="ut_a">${articleLink.title }</a>
-				</li>
-				</g:each> 
+					<li class="ut_item"
+						style="border-bottom: solid 1px #ccc; border-top: solid 1px #ddd;">
+						<a href="${articleLink.link }" class="ut_a"> ${articleLink.title }
+					</a>
+					</li>
+				</g:each>
 			</ul>
 
 		</div>
@@ -127,14 +170,16 @@
 		<div class="box02">
 			<h2 class="boxtitl02">공유 많은 기사</h2>
 			<ol class="rank_list_re">
-				<g:each in="${articles.sort{-it.persons.size()} }" status="i" var="articleLink">
-				<li class="ut_item"
-					style="border-bottom: solid 1px #ccc; border-top: solid 1px #ddd;">
-					<a href="${articleLink.link }" class="ut_a"><span
-						class="num">${i+1}.</span>${articleLink.title }<span
-						class="comment s_gy">${articleLink.persons.size() }</span></a>
-				</li>
-				</g:each> 
+				<g:each in="${articles.sort{-it.persons.size()} }" status="i"
+					var="articleLink">
+					<li class="ut_item"
+						style="border-bottom: solid 1px #ccc; border-top: solid 1px #ddd;">
+						<a href="${articleLink.link }" class="ut_a"><span class="num">
+								${i+1}.
+						</span> ${articleLink.title }<span class="comment s_gy"> ${articleLink.persons.size() }
+						</span></a>
+					</li>
+				</g:each>
 			</ol>
 		</div>
 		<!--// 공유많은기사 -->

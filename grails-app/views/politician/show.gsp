@@ -70,7 +70,7 @@
 				<li class="fieldcontain">
 					<span id="party-label" class="property-label">호감도</span>
 					<span class="property-value" aria-labelledby="party-label">
-						좋아요: ${politicianInstance.likeCount() }, 싫어요: ${politicianInstance.dislikeCount() }
+						좋아요: ${politicianInstance.likeCount }, 싫어요: ${politicianInstance.dislikeCount }
 					</span>
 				</li>
 				<li class="fieldcontain">

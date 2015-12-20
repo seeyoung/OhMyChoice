@@ -15,7 +15,7 @@ class Politician {
 	
 	String birthDay
 	
-	String duty
+	String role
 	
 	String photoUrl
 	
@@ -31,6 +31,8 @@ class Politician {
 		approvalRateChartId nullable:true
 		reputationChartId nullable:true
 		photoUrl nullable:true
+		birthDay nullable:true
+		role nullable:true
     }
 	
 	static mapping ={
@@ -69,11 +71,11 @@ class Politician {
 		VideoLink.getVideos4Politician(this)
 	}
 
-	int likeCount(){
+	int getLikeCount(){
 		PoliticianReputation.getLikeCount(this)
 	}
 	
-	int dislikeCount(){
+	int getDislikeCount(){
 		PoliticianReputation.getDislikeCount(this)
 	}
 }
