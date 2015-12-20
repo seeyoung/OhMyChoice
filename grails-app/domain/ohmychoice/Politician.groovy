@@ -65,6 +65,10 @@ class Politician {
 		ArticleLink.getArticles4Politician(this)
 	}
 
+	List<VideoLink> searchVideos(){
+		VideoLink.getVideos4Politician(this)
+	}
+
 	int likeCount(){
 		PoliticianReputation.getLikeCount(this)
 	}

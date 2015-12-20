@@ -16,14 +16,12 @@
 		src="http://www.moi.so/Common/JS/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css"
 		href="http://ojsimg.ohmynews.com/css/moi/bootstrap.css">
-	<asset:stylesheet src="ohmy.css" />
+	<asset:stylesheet src="ohmy3.css" />
 	<asset:javascript src="application.js" />
 	<g:layoutHead />
 </head>
 <body>
-	<div style="position: relative;">
 		<g:layoutBody />
-	</div>
 </body>
 </html>
 

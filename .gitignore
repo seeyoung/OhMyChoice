@@ -34,3 +34,6 @@
 /target-eclipse
 target/
 target-eclipse/
+devDb.h2.db
+*.db
+.asscache
