@@ -21,7 +21,10 @@
 	<g:layoutHead />
 </head>
 <body>
+	<div style="position: relative;margin: 0 auto; max-width: 720px;">
+
 		<g:layoutBody />
+	</div>
 </body>
 </html>
 
